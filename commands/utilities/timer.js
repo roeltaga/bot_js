@@ -71,10 +71,42 @@ To set a quick timer in seconds you dont need to type "s" in the end.`)
 
             message.channel.send(`${message.author.username} set timer for ${timerText}`);
 
-            setTimeout(function () {
-                message.channel.send(`${message.author}, your timer is over`);
-                console.log(`Timer: ${message.author.tag}'s ${message.id} timer is over`);
-            }, timerInMs);
+            // if timer is less than the limit for setTimeout()
+            if (timerInMs <= 2147483647) {
+                setTimeout(function () {
+                    message.channel.send(`${message.author}, your timer is over`);
+                    console.log(`Timer: ${message.author.tag}'s ${message.id} timer is over`);
+                }, timerInMs);
+            } else {
+                // if above the limit, then we use an interval till the time is less than 21d
+
+                let daysToCount = Math.trunc(timerInMs / 1000 / 60 / 60 / 24) - 20
+                let timeLeftForIntervalInMs = timerInMs - daysToCount * 24 * 60 * 60 * 1000
+
+                function setDaysTimeout(callback, daysToCount) {
+                    let msInDay = 86400000;
+
+                    let dayCount = 0;
+                    let timer = setInterval(function () {
+                        dayCount++;  // a day has passed
+
+                        // when <21d just run the normal interval
+                        if (dayCount === daysToCount) {
+                            clearInterval(timer);
+                            callback.apply(this, []);
+                        }
+                    }, msInDay);
+                }
+
+                setDaysTimeout(function () {
+                    setTimeout(function () {
+                        message.channel.send(`${message.author}, your timer is over`);
+                        console.log(`Timer: ${message.author.tag}'s ${message.id} timer is over`);
+                    }, timeLeftForIntervalInMs);
+                }, daysToCount); // start the normal interval with the time that it is left (<21d)
+
+
+            }
 
 
 
