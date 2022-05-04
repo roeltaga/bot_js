@@ -25,6 +25,13 @@ client.loadEvents = (bot, reload) => require("./handlers/events")(bot, reload)
 client.loadCommands(bot, false)
 client.loadEvents(bot, false)
 
+// loading old timers on reboot
+
+// client.loadTimers = new Discord.Collection()
+// client.loadCommands = (bot, reload) => require("./handlers/commands")(bot, reload)
+// client.loadEvents(bot, false)
+
+
 
 module.exports = bot
 
