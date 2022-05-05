@@ -31,8 +31,6 @@ client.loadEvents(bot, false)
 // client.loadCommands = (bot, reload) => require("./handlers/commands")(bot, reload)
 // client.loadEvents(bot, false)
 
-
-
 module.exports = bot
 
 
