@@ -6,33 +6,6 @@
     "timer_user": "500275699718946817",
     "timer_created": 1651700481412,
     "timer_time": 7000,
-    "timer_text": "186s"
-  },
-  {
-    "timer_guild": "897593298812817408",
-    "timer_channel": "955067391749025852",
-    "timer_message": "971527368617377804",
-    "timer_user": "500275699718946817",
-    "timer_created": 1651700574784,
-    "timer_time": 3000,
-    "timer_text": "3m 56s"
-  },
-  {
-    "timer_guild": "897593298812817408",
-    "timer_channel": "955067391749025852",
-    "timer_message": "971555825468456980",
-    "timer_user": "500275699718946817",
-    "timer_created": 1651707359426,
-    "timer_time": 14000,
-    "timer_text": "14s"
-  },
-  {
-    "timer_guild": "897593298812817408",
-    "timer_channel": "955067391749025852",
-    "timer_message": "977960934037413889",
-    "timer_user": "500275699718946817",
-    "timer_created": 1653234456310,
-    "timer_time": 3000,
-    "timer_text": "3s"
+    "timer_text": "7d"
   }
 ]
