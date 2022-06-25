@@ -7,8 +7,26 @@ module.exports = {
 
         if (!message.guild) return
 
+        // Ping Roel 120m after /bump command is used
+        // check if the message is a slash command
+        if (message.type == "APPLICATION_COMMAND") {
+            if (message.interaction.commandName == "bump") {
+                console.log("Someone used /bump")
+
+                setTimeout(() => {
+                    try {
+                        message.channel.send(`Time to bump the server <@${message.interaction.user.id}>`)
+                        console.log("Pinger Roel to bump the server")
+                    } catch (err) {
+                        console.log(err)
+                    }
+                }, (120 * 60 * 1000));
+            }
+        };
+
         if (message.author.bot) return
 
+        // message everytime MeesMus talks
         if (!message.content.startsWith(prefix)) {
             if (message.author.id == '931529949448380487') {
                 message.reply("NUB reply to Roel's DMs!")
