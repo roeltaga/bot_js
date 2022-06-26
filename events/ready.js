@@ -1,6 +1,8 @@
 module.exports = {
     name: "ready",
     run: async (bot) => {
+        const clog = require("../../proCode/proConsole.js").proConsole
+
         console.log("Logged in as " + bot.client.user.tag)
 
         let restoreTimers = require("../onReload/restoreTimers.js")
@@ -11,9 +13,9 @@ module.exports = {
             console.log(error)
         }
 
-        console.log("----------------")
-        console.log("Bot Ready")
-        console.log("----------------")
+        clog("----------------", "s")
+        clog("Bot Ready", "s")
+        clog("----------------", "s")
 
     }
 }

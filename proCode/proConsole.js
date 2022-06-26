@@ -47,6 +47,7 @@ function prefTime() {
 // t - type
 //     e = error (red)
 //     a = alert (yellow)
+//     s = success (green)
 //     l/other = no color
 function proConsole(i, t) {
     if (t == "e") {
@@ -55,6 +56,8 @@ function proConsole(i, t) {
         console.log(`[${prefTime()}] ${colors.FgYellow}Alert: ${i}${colors.Reset}`)
     } else if (t == "l") {
         console.log(`[${prefTime()}] ${colors.FgWhite}Log: ${i}${colors.Reset}`)
+    } else if (t == "s") {
+        console.log(`[${prefTime()}] ${colors.FgGreen}Log: ${i}${colors.Reset}`)
     } else {
         console.log(`[${prefTime()}] ${colors.FgWhite}Info: ${i}${colors.Reset}`)
     }
