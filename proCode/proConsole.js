@@ -1,3 +1,5 @@
+
+// Colors you can use in console output
 const colors = {
     "Reset": "\x1b[0m",
     "Bright": "\x1b[1m",
@@ -26,7 +28,8 @@ const colors = {
     "BgWhite": "\x1b[47m",
 }
 
-// Prefered time format
+// Get time in prefered format
+// Local time as hh:mm:ss
 function prefTime() {
     let date = new Date()
     let h = date.getHours()
@@ -39,6 +42,12 @@ function prefTime() {
     return `${h}:${m}:${s}`
 }
 
+// Better Looking Console Output
+// i - input(output)
+// t - type
+//     e = error (red)
+//     a = alert (yellow)
+//     l/other = no color
 function proConsole(i, t) {
     if (t == "e") {
         console.log(`[${prefTime()}] ${colors.FgRed}Error: ${i}${colors.Reset}`)
