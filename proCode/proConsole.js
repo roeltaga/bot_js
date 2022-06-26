@@ -57,7 +57,7 @@ function proConsole(i, t) {
     } else if (t == "l") {
         console.log(`[${prefTime()}] ${colors.FgWhite}Log: ${i}${colors.Reset}`)
     } else if (t == "s") {
-        console.log(`[${prefTime()}] ${colors.FgGreen}Log: ${i}${colors.Reset}`)
+        console.log(`[${prefTime()}] ${colors.FgGreen}Success: ${i}${colors.Reset}`)
     } else {
         console.log(`[${prefTime()}] ${colors.FgWhite}Info: ${i}${colors.Reset}`)
     }
