@@ -1,7 +1,7 @@
 module.exports = {
     name: "ready",
     run: async (bot) => {
-        const clog = require("../../proCode/proConsole.js").proConsole
+        const clog = require("../proCode/proConsole.js").proConsole
 
         console.log("Logged in as " + bot.client.user.tag)
 
