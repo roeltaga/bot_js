@@ -49,7 +49,7 @@ function prefTime() {
 //     a = alert (yellow)
 //     s = success (green)
 //     l/other = no color
-function proConsole(i, t) {
+function clog(i, t) {
     if (t == "e") {
         console.log(`[${prefTime()}] ${colors.FgRed}Error: ${i}${colors.Reset}`)
     } else if (t == "a") {
@@ -64,5 +64,5 @@ function proConsole(i, t) {
 }
 
 module.exports = {
-    proConsole
+    clog
 }

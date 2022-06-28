@@ -4,6 +4,7 @@ module.exports = {
     name: "messageCreate",
     run: async function runAll(bot, message) {
         const { client, prefix, owners } = bot
+        const {clog} = require("../proCode/proConsole.js")
 
         if (!message.guild) return
 
