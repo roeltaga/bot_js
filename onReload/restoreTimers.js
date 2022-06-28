@@ -4,6 +4,8 @@ let asd = function (bot) {
 
     let { client } = bot
 
+    const {clog} = require("../proCode/proConsole.js")
+
     let timersRAW = fs.readFileSync("user_data/timers.json");
     let timersJSON = JSON.parse(timersRAW);
 
@@ -72,13 +74,13 @@ To set a quick timer in seconds you dont need to type "s" in the end.`)
                 // SET TIMER
                 const timerInMs = totalTimeInSeconds * 1000;
 
-                console.log(`Loading Saved Timers: ${message.author.username} set timer for ${timerText}`);
+                clog(`Loading Saved Timers: ${message.author.username} set timer for ${timerText}`, "s");
 
                 // if timer is less than the limit for setTimeout()
                 if (timerInMs <= 2147483647) {
                     setTimeout(function () {
                         message.channel.send(`${message.author}, your timer is over`);
-                        console.log(`Timer: ${message.author.tag}'s ${message.id} timer is over`);
+                        clog(`Timer: ${message.author.tag}'s ${message.id} timer is over`);
                     }, timerInMs);
                 } else {
                     // if above the limit, then we use an interval till the time is less than 21d
@@ -104,7 +106,7 @@ To set a quick timer in seconds you dont need to type "s" in the end.`)
                     setDaysTimeout(function () {
                         setTimeout(function () {
                             message.channel.send(`${message.author}, your timer is over`);
-                            console.log(`Timer: ${message.author.tag}'s ${message.id} timer is over`);
+                            clog(`Timer: ${message.author.tag}'s ${message.id} timer is over`);
                         }, timeLeftForIntervalInMs);
                     }, daysToCount); // start the normal interval with the time that it is left (<21d)
 

@@ -12,14 +12,14 @@ module.exports = {
         // check if the message is a slash command
         if (message.type == "APPLICATION_COMMAND") {
             if (message.interaction.commandName == "bump") {
-                console.log("Someone used /bump")
+                clog("Someone used /bump")
 
                 setTimeout(() => {
                     try {
                         message.channel.send(`Time to bump the server <@${message.interaction.user.id}>`)
-                        console.log("Pinger Roel to bump the server")
+                        clog("Pinger Roel to bump the server")
                     } catch (err) {
-                        console.log(err)
+                        clog(err, "e")
                     }
                 }, (120 * 60 * 1000));
             }
@@ -34,12 +34,12 @@ module.exports = {
                     .then((theReply) => setTimeout(() => {
                         try {
                             theReply.delete()
-                            console.log("Sent and deleted message to MeesMus")
+                            clog("Sent and deleted message to MeesMus")
                         } catch (err) {
-                            console.log(err)
+                            clog(err, "e")
                         }
                     }, 4000))
-                    .catch(err => console.log(err))
+                    .catch(err => clog(err, "e"))
             }
             return
         }
