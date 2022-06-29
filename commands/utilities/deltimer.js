@@ -46,6 +46,8 @@ Example: \`${prefix}deltimer naidsjfaboar\``)
             // // write to file: user_data/timers.json
             timersRAW = JSON.stringify(timersJSON, null, 2)
             fs.writeFileSync("user_data/timers.json", timersRAW)
+            message.reply(`Timer \`${timerID}\` deleted successfully.`)
+            clog(`Timer \`${timerID}\` deleted successfully.`)
 
         } else {
             // if timer does not exist
