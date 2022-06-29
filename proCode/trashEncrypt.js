@@ -20,7 +20,7 @@ function num(input) {
 
     let output = input.replace(/[1234567890]/g, m => code[m]);
 
-    clog("NUM encrypted: " + output)
+    // clog("NUM encrypted: " + output)
 
     return output
 }
@@ -44,7 +44,7 @@ function char(input) {
 
     let output = input.replace(/[abcdefghiz]/g, m => code[m]);
 
-    clog("CHAR encrypted: " + output)
+    // clog("CHAR encrypted: " + output)
 
     return output
 }
