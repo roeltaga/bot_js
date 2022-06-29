@@ -7,6 +7,8 @@ module.exports = {
 
         const fs = require('fs');
 
+        const trashencrypt = require("../../proCode/trashEncrypt")
+
         const argsArr = args.toLowerCase().trim().split(/ +/g)
 
         if (argsArr[0].length == 0) {
@@ -110,6 +112,9 @@ To set a quick timer in seconds you dont need to type "s" in the end.`)
 
 
 
+            let timerID = trashencrypt.num(message.createdTimestamp)
+
+
             let timerObject = {
                 "timer_guild": message.guildId,
                 "timer_channel": message.channelId,
@@ -117,7 +122,8 @@ To set a quick timer in seconds you dont need to type "s" in the end.`)
                 "timer_user": message.author.id,
                 "timer_created": message.createdTimestamp,
                 "timer_time": timerInMs,
-                "timer_text": timerText
+                "timer_text": timerText,
+                "timer_ID": timerID
             }
 
             // read timers.json
