@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
 require("dotenv").config()
+const {clog} = require("./proCode/proConsole")
 
 const client = new Discord.Client({
     intents: [

@@ -1,11 +1,12 @@
 const {getFiles} = require("../util/functions")
+const { clog } = require("../proCode/proConsole")
 
 module.exports = (bot, reload) => {
     const {client} = bot
     let events = getFiles("./events/", ".js")
 
     if (events.length ===0 ) {
-        console.log("No events to load")
+        clog("No events to load")
     }
 
     events.forEach((f, i) => {
@@ -15,7 +16,7 @@ module.exports = (bot, reload) => {
         client.events.set(event.name, event)
 
         if (!reload)
-            console.log(`Events: ${i + 1}. loaded ${f}`)
+            clog(`Events: ${i + 1}. loaded ${f}`)
     })
 
 if (!reload)
@@ -31,7 +32,7 @@ function triggerEventHandler(bot, event, ...args) {
         else
             throw new Error(`Event ${event} does not exist`)
     } catch (err) {
-        console.log(err)
+        clog(err, "e")
     }
 }
 

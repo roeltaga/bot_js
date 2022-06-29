@@ -1,18 +1,22 @@
-let asd = function (bot) {
+let restoreTimers = function (bot) {
 
     const fs = require('fs');
 
     let { client } = bot
 
-    const {clog} = require("../proCode/proConsole.js")
+    const { clog } = require("../proCode/proConsole.js")
 
     let timersRAW = fs.readFileSync("user_data/timers.json");
     let timersJSON = JSON.parse(timersRAW);
 
     if (timersJSON.length > 0) {
 
+
+
         function setTimer(message, args) {
             const argsArr = args.toLowerCase().trim().split(/ +/g)
+
+
 
             if (argsArr[0].length == 0) {
                 message.channel.send(
@@ -27,6 +31,7 @@ To set a quick timer in seconds you dont need to type "s" in the end.`)
             let timerText = ""
 
             argsArr.forEach(arg => {
+
 
                 if (isNaN(parseFloat(arg))) return
 
@@ -62,6 +67,7 @@ To set a quick timer in seconds you dont need to type "s" in the end.`)
             //remove the extra space in the end
             timerText = timerText.trimEnd()
 
+
             if (totalTimeInSeconds == 0) {
                 message.reply(
                     `Invalid arguments,
@@ -73,6 +79,7 @@ To set a quick timer in seconds you dont need to type "s" in the end.`)
 
                 // SET TIMER
                 const timerInMs = totalTimeInSeconds * 1000;
+
 
                 clog(`Loading Saved Timers: ${message.author.username} set timer for ${timerText}`, "s");
 
@@ -115,24 +122,31 @@ To set a quick timer in seconds you dont need to type "s" in the end.`)
             }
         }
 
+
         // load all timers
         timersJSON.forEach(timer => {
 
-            let message = client.guilds.fetch(timer.timer_guild)
+            // console.log("1111111111111111")
+
+            client.guilds.fetch(timer.timer_guild)
                 .then(guild => guild.channels.fetch(timer.timer_channel)
                     .then(channel => channel
                         .messages.fetch(timer.timer_message)
                         .then(message => {
+
+                            // console.log("2222222222222222")
                             setTimer(message, timer.timer_text)
                         })
                         .catch(console.error))
                     .catch(console.error))
                 .catch(console.error)
 
-        });
+            // console.log("33333333333333")
+
+        })
     }
 
 
 }
 
-module.exports = { asd }
+module.exports = { restoreTimers }

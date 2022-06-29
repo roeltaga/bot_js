@@ -1,6 +1,7 @@
 const { getFiles } = require("../util/functions")
 const fs = require("fs")
 const { builtinModules } = require("module")
+const { clog } = require("../proCode/proConsole")
 
 module.exports = (bot, reload) => {
     const {client} = bot
@@ -15,5 +16,5 @@ module.exports = (bot, reload) => {
             client.commands.set(command.name, command)
         })
     })
-    console.log(`Commands: Loaded ${client.commands.size} commands`)
+    clog(`Commands: Loaded ${client.commands.size} commands`)
 }
