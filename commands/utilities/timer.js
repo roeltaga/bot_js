@@ -121,9 +121,9 @@ To set a quick timer in seconds you dont need to type "s" in the end.`)
                 "timer_message": message.id,
                 "timer_user": message.author.id,
                 "timer_created": message.createdTimestamp,
+                "timer_ID": timerID,
                 "timer_time": timerInMs,
-                "timer_text": timerText,
-                "timer_ID": timerID
+                "timer_text": timerText
             }
 
             // read timers.json
