@@ -28,21 +28,21 @@ module.exports = {
         if (message.author.bot) return
 
         // message everytime MeesMus talks
-        if (!message.content.startsWith(prefix)) {
-            if (message.author.id == '931529949448380487') {
-                message.reply("NUB reply to Roel's DMs!")
-                    .then((theReply) => setTimeout(() => {
-                        try {
-                            theReply.delete()
-                            clog("Sent and deleted message to MeesMus")
-                        } catch (err) {
-                            clog(err, "e")
-                        }
-                    }, 4000))
-                    .catch(err => clog(err, "e"))
-            }
-            return
-        }
+        // if (!message.content.startsWith(prefix)) {
+        //     if (message.author.id == '931529949448380487') {
+        //         message.reply("NUB reply to Roel's DMs!")
+        //             .then((theReply) => setTimeout(() => {
+        //                 try {
+        //                     theReply.delete()
+        //                     clog("Sent and deleted message to MeesMus")
+        //                 } catch (err) {
+        //                     clog(err, "e")
+        //                 }
+        //             }, 4000))
+        //             .catch(err => clog(err, "e"))
+        //     }
+        //     return
+        // }
 
 
         // the message without the prefix
