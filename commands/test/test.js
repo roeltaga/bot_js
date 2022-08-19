@@ -13,17 +13,6 @@ module.exports = {
         trashencrypt.num(args)
 
 
-
-
-
-
-
-
-
-
-
-
-
         // const timer = require("../utilities/timer")
 
         // try {
@@ -34,12 +23,9 @@ module.exports = {
 
 
 
-
-
-
-
-
         clog(`Test: ${args}`, "s")
+
+        message.guild.channels.get("897593299253211176").send(`Don't forget to \`/bump\` the server <@&1010317029028413500>`)
 
         message.react("☑️").then().catch(console.error)
 

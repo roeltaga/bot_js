@@ -17,7 +17,7 @@ module.exports = {
                 setTimeout(() => {
                     try {
                         message.channel.send(`Time to bump the server <@${message.interaction.user.id}>`)
-                        clog("Pinger Roel to bump the server")
+                        clog("Pinged @bumpers to bump the server")
                     } catch (err) {
                         clog(err, "e")
                     }
