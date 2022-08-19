@@ -17,7 +17,7 @@ module.exports = {
                 setTimeout(() => {
                     try {
                         // message.channel.send(`Time to bump the server <@${message.interaction.user.id}>`)
-                        message.guild.channels.cache.get("897593299253211176").send(`Don't forget to \`/bump\` the server <@&1010317029028413500>`)
+                        message.guild.channels.cache.get("984787427602346014").send(`Don't forget to \`/bump\` the server <@&1010325090833010749>`)
                         clog("Pinged @bumpers to bump the server")
                     } catch (err) {
                         clog(err, "e")
