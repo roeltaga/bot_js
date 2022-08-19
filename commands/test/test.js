@@ -25,7 +25,7 @@ module.exports = {
 
         clog(`Test: ${args}`, "s")
 
-        message.guild.channels.cache.get("897593299253211176").send(`Don't forget to \`/bump\` the server <@&1010317029028413500>`)
+        // message.guild.channels.cache.get("897593299253211176").send(`Don't forget to \`/bump\` the server <@&1010317029028413500>`)
 
         message.react("☑️").then().catch(console.error)
 
