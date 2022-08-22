@@ -11,9 +11,9 @@ module.exports = {
 
         message.delete();
 
-        message.channel.send(`${args.join(' ')}`);
+        message.channel.send(`Someone shared a secret message:\n||${args}||`)
 
-
+        clog(`${message.author.tag} sent a secret: ${args}`)
 
 //         if (args[0].length == 0) {
 //             message.channel.send(
@@ -21,16 +21,6 @@ module.exports = {
 // Example: \`${prefix}deltimer naidsjfaboar\``)
 //             return
 //         }
-
-
-//         clog(timerIndex, "a")
-
-//             message.reply(`Timer \`${timerID}\` deleted successfully.`)
-//             clog(`Timer \`${timerID}\` deleted successfully.`)
-
-//         }
-
-
 
     }
 
