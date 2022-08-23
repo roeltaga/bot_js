@@ -8,10 +8,6 @@ module.exports = {
     devOnly: true,
     run: async ({ client, message, args }) => {
 
-        const trashencrypt = require("../../proCode/trashEncrypt")
-
-        trashencrypt.num(args)
-
 
         // const timer = require("../utilities/timer")
 
@@ -23,7 +19,7 @@ module.exports = {
 
 
 
-        clog(`Test: ${args}`, "s")
+        clog(`Test run from "a" message`, "s")
 
         // let d = new Date()
         // clog(`Test TIME: ${d.getTime()}`, "a")
