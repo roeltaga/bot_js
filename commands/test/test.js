@@ -25,6 +25,10 @@ module.exports = {
 
         clog(`Test: ${args}`, "s")
 
+        let d = new Date()
+        clog(`Test TIME: ${d.getTime()}`, "a")
+        clog(`Test TIME: ${d.getHours()}:${d.getMinutes()}`, "a")
+
         // message.guild.channels.cache.get("897593299253211176").send(`Don't forget to \`/bump\` the server <@&1010317029028413500>`)
 
         message.react("☑️").then().catch(console.error)
