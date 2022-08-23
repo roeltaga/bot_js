@@ -12,19 +12,18 @@ module.exports = {
         // check if the message is a slash command
         if (message.type == "APPLICATION_COMMAND") {
             if (message.interaction.commandName == "bump") {
-                clog("Someone used /bump")
-
-                setTimeout(() => {
-                    try {
-                        // message.channel.send(`Time to bump the server <@${message.interaction.user.id}>`)
-                        message.guild.channels.cache.get("984787427602346014").send(`Don't forget to \`/bump\` the server <@&1010325090833010749>`)
-                        clog("Pinged @bumpers to bump the server")
-                    } catch (err) {
-                        clog(err, "e")
-                    }
-                }, (120 * 60 * 1000));
+                const bump = require("../commands/utilities/bump")
+                bump.run({ ...bot, message })
             }
         };
+
+        // when someone Bumps the server
+        if(message.content == "a") {
+            clog("A message was sent", "s")
+
+            const bump = require("../commands/utilities/bump")
+            bump.run({ ...bot, message })
+        }
 
         if (message.author.bot) return
 
