@@ -69,7 +69,7 @@ module.exports = {
 
         // if the reminder already went off
         if (bumpJSON[guild].reminded == true) {
-            clog(`Bump reminder loaded for server ${guild} but already reminded.`, "a")
+            clog(`Bump reminder loaded for server ${guild} but already reminded.`, "s")
             return
         }
 
@@ -109,6 +109,6 @@ module.exports = {
         }, (timer));
 
 
-        clog(`Bump reminder loaded for server ${guild}, Reminder in ~${Math.round(timer / 1000 / 60)}m.`, "a")
+        clog(`Bump reminder loaded for server ${guild}, Reminder in ~${Math.round(timer / 1000 / 60)}m.`, "s")
     }
 }
