@@ -4,7 +4,7 @@ const fs = require('fs');
 
 module.exports = {
     name: "bump",
-    category: "bump",
+    category: "utilities",
     permissions: [],
     devOnly: true,
     run: async ({ client, message }) => {
