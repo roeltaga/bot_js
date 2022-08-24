@@ -16,7 +16,7 @@ module.exports = {
         let bumpRAW = fs.readFileSync("user_data/bump.json");
         let bumpJSON = JSON.parse(bumpRAW);
 
-        // update the time of the bump and resetthe reminded key
+        // update the time of the bump and reset the reminded key
         bumpJSON[guild].time = bumpTime
         bumpJSON[guild].reminded = false
 
