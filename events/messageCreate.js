@@ -8,7 +8,8 @@ module.exports = {
 
         if (!message.guild) return
 
-        // Ping Roel 120m after /bump command is used
+
+        // Bump reminder trigger
         // check if the message is a slash command
         if (message.type == "APPLICATION_COMMAND") {
             if (message.interaction.commandName == "bump") {
@@ -17,16 +18,12 @@ module.exports = {
             }
         };
 
-        // when someone Bumps the server
-        if(message.content == "a") {
-            clog("A message was sent", "s")
 
-            const bump = require("../commands/utilities/bump")
-            bump.run({ ...bot, message })
-        }
 
+        // Only continue if the message is not from a bot now
         if (message.author.bot) return
 
+        // if the message is not a command for this bot
         if (!message.content.startsWith(prefix)) {
 
             // message everytime MeesMus talks
@@ -44,6 +41,8 @@ module.exports = {
             // }
             return
         }
+
+        
         // THIS WILL NOT RUN IF THE MESSAGE DOES NOT START WITH THE RIGHT PREFIX
 
         // the message without the prefix
