@@ -17,6 +17,10 @@ module.exports = {
         const bump = require("../commands/utilities/bump")
         bump.reload({ ...bot})
 
+        // Load Member Counter
+        const membercount = require("../commands/utilities/membercount")
+        membercount.onload({ ...bot})
+
         clog("----------------", "s")
         clog("Bot Ready", "s")
         clog("----------------", "s")
