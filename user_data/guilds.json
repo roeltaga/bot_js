@@ -1,8 +1,12 @@
 {
   "897593298812817408": {
+    "guild": {
+      "id": "897593298812817408",
+      "name": "Salt & Light MC"
+    },
     "memberCount": {
       "channelID": "897593298812817414",
-      "lastUpdated": 1661370312177
+      "lastUpdated": 1661388695105
     }
   }
 }
